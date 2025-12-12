@@ -1,0 +1,7 @@
+app:
+  version: latest
+  repo: qa-tech-training
+
+service:
+  port: 3000
+  type: LoadBalancer

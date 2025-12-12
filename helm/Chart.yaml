@@ -1,0 +1,8 @@
+apiVersion: v2
+name: gitopp-app
+description: A simple Helm chart example to deploy an express server and a service
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0.0"

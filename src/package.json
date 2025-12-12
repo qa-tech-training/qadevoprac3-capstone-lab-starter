@@ -1,0 +1,16 @@
+{
+  "name": "express-metrics-app",
+  "version": "0.1.0",
+  "description": "Sample express server with metrics export",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"TODO: Write some tests\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Adam Gray",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "prom-client": "^15.1.3"
+  }
+}

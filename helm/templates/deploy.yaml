@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app: express-server
+    release: {{ .Release.Name }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-server
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: express-server
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - image: ghcr.io/{{ .Values.app.repo }}/express-app:{{ .Values.app.version }}
+        name: server
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          seccompProfile:
+            type: RuntimeDefault
+        resources:
+          requests:
+            cpu: 50m
+            memory: 8Mi
+          limits:
+            cpu: 100m
+            memory: 16Mi
+        ports:
+        - containerPort: {{ .Values.service.port }}

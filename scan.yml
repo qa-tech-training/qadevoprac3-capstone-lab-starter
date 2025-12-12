@@ -1,0 +1,17 @@
+name: Validate Helm Chart
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  validate-chart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: validate
+      run: |
+        # TODO: add the necessary commands here to install terrascan
+        cd terraform/
+        terrascan scan -i helm
