@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "<gcp_bucket_id>"
+    bucket = "qadevoprac3-capstone-bucket-16546-12158"
     prefix = "terraform/cluster"
   }
 }
